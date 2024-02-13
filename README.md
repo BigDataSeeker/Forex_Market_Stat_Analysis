@@ -18,7 +18,7 @@ The Foreign Exchange market is the biggest market in the world with daily tradin
 
 - **Currency-wise perspective:** for the purpose of investigating which currencies are most influential upon each other and in this way capturing economical relationships between different countries, a time series for the last 20 years considering all the currencies were used.
 
-*Here: Currencies_vs_dollar_summary image*
+![image](https://github.com/BigDataSeeker/Forex_Market_Stat_Analysis/blob/main/Main_findings_imgs/Currencies_vs_dollar_summary.jpg)
 
 ## Methods
 
@@ -66,7 +66,7 @@ For example, below you can see the results of PCA for the Russian economy 1997 -
 
 The scores plot of the years in the space of two main principal components are depicted below: 
 
-*Here: Russia_PCA image*
+![image](https://github.com/BigDataSeeker/Forex_Market_Stat_Analysis/blob/main/Main_findings_imgs/Russia_PCA.PNG)
 
 As you can notice, there's an abrupt distinction between the pre-2014 and post-2014 periods. An interpretation may be driven by the fact that Russia was sanctoined in 2014. 
 
@@ -78,29 +78,29 @@ Adopted clustering techniques allowed to find possible groupings among similar c
 
 An interesting insight was to study the discrepancies among the obtained clusters when we focus on the main big events such as COVID pandemic: how did the grouping change from the 3 years before the event to the 3 years after the event?
 
-*Here: image pre-covid clustering*
+![image](https://github.com/BigDataSeeker/Forex_Market_Stat_Analysis/blob/main/Main_findings_imgs/Pre-COVID_clustering.PNG)
 
-*Here: image post-covid clustering*
+![image](https://github.com/BigDataSeeker/Forex_Market_Stat_Analysis/blob/main/Main_findings_imgs/Post-COVID_clustering.PNG)
 
 According to the results depicted above, there's a drastic change in the forex market after COVID-19 pandemic. 
 
 Let's also apply clustering on the whole 2002-2022 perdiod without division into periods. For this purpose K-means algorithm was used.
 
-*Here: clust_curr*
+![image](https://github.com/BigDataSeeker/Forex_Market_Stat_Analysis/blob/main/Clustering_imgs/clust_curr.png)
 
 We see that Turkish Lira is definitely an outlier, probably due to its extraordinary inflation in 2022. But apart from this, it's not easy to interpret such clutering results.
 
 Let's change the perspective and try to cluster Years in the space of country currencies:
 
-*Here: Clustering_years_k-means_Rus_incl*
+![image](https://github.com/BigDataSeeker/Forex_Market_Stat_Analysis/blob/main/Clustering_imgs/Clustering_years_k-means_Rus_incl.jpg)
 
 We see that there's a clear distinciton between pre-2014 and post-2014 periods. Moreover, we can notice that the year 2022 is highly biased from the mean of its cluster which is again known for the events linked to Russia. 
 
 Let's exclude Russian currency from the analysis as it may affect the overall clutering results.
 
-*Here: Clustering_years_k-means_Rus_excl*
+![image](https://github.com/BigDataSeeker/Forex_Market_Stat_Analysis/blob/main/Clustering_imgs/Clustering_years_k-means_Rus_excl.png)
 
-*Here: WSS_elbow_plot_Rus_excl*
+![image](https://github.com/BigDataSeeker/Forex_Market_Stat_Analysis/blob/main/Clustering_imgs/WSS_elbow_plot_Rus_excl.png)
 
 After the exclusion of Russia the clustering hasn't changed.
 
@@ -111,13 +111,13 @@ We can see evident results: There's dramatic changes in the currencies rates aft
 
 In order to see what currencies are interrelated to each other, the Correlation analysis on the the the dollar/currency rates along 2002-2022 was applied.
 
-*Here: Correlation_matrix_currencies_vs_years*
+![image](https://github.com/BigDataSeeker/Forex_Market_Stat_Analysis/blob/main/Main_findings_imgs/Currencies_corrmatr.jpg)
 
 From the Correlation matrix above we can see, for example, that the currencies of Europenian countries are positively correlated.
 
 Let's change the perspective and see what are the correlations of the Years in the space of currencies.
 
-*Here: Correlation_matrix_currencies_vs_years*
+![image](https://github.com/BigDataSeeker/Forex_Market_Stat_Analysis/blob/main/Main_findings_imgs/Correlation_matrix_currencies_vs_years.jpg)
 
 The Correlation plot above probably says about some sort of flipping changes in the Foreign exchange market: the currecncies that were on average stronger against dollar in 2002-2012 wrt other currencies became on average weaker against dollar in 2012-2022 wrt other currencies. And the weaker ones became stronger.
 
@@ -128,11 +128,11 @@ After having performed Fourier-based smoothing on the currencies exchange rates 
 
 Grouping of the smoothed data is presented in the image below: Argentina is an outlier since the country has been going through political instability and high inflation after the pandemic
 
-*Here: Grouping_smoothed_data*
+![image](https://github.com/BigDataSeeker/Forex_Market_Stat_Analysis/blob/main/Main_findings_imgs/Grouping_smoothed_data.PNG)
 
 The obtained results show a clear distinction between currencies: 
 
-*Here: FPA_loadings_plot*
+![image](https://github.com/BigDataSeeker/Forex_Market_Stat_Analysis/blob/main/Main_findings_imgs/FPA_loadings_plot.jpg)
 
 - the 1st FPC discriminates between those who lost strength to the US dollar after 2014 and those who didn’t
 
@@ -141,21 +141,21 @@ The obtained results show a clear distinction between currencies:
 
 Thus, the corresponding scores of the currencies of the countries in the space of two main FPC are as below:
 
-*Here: Scores_in_FPCA_plot*
+![image](https://github.com/BigDataSeeker/Forex_Market_Stat_Analysis/blob/main/Main_findings_imgs/Scores_in_FPCA_plot.jpg)
 
 ### Timeseries Forecasting
 
 In this part of the analysis the aim was to predict the value of the 62 countries’ currencies in 2022. For these purposes past values were used to do prediction. Different ARMA models were fitted by minimizing AIC for parameter selection. In the figure below you can see the standardized prediction errors for 6 countries: 3 for best predictions and 3 for worst predictions. They are 2022 standardized forecast errors of Costa Rica, Mexico, Madagascar, Türkiye, Korea and Japan. 
 
-*Here: 2022_standardized_forecast_errors_CostaRica_Mexico_Madagascar_Türkiye_Korea_Japan*
+![image](https://github.com/BigDataSeeker/Forex_Market_Stat_Analysis/blob/main/Main_findings_imgs/2022_standardized_forecast_errors_CostaRica_Mexico_Madagascar_T%C3%BCrkiye_Korea_Japan.PNG)
 
 Also, the image below shows the best and worst predictions. They are Türkiye and Madagascar. They both lose value against dollar.
 
-*Here: Standardized_currency_vs_dollar_over_years_Türkiye_Madagascar_forecasts2022*
+![image](https://github.com/BigDataSeeker/Forex_Market_Stat_Analysis/blob/main/Main_findings_imgs/Standardized_currency_vs_dollar_over_years_T%C3%BCrkiye_Madagascar_forecasts2022.PNG)
 
 Moreover the prediction was done also in the country-wise perspective for Norway. For ARMA model, just past values of exchange rate are used and for VAR model exhange rate, inflation, interest rate, current account balance, GDP per capita, population, unemployment, renewable energy spending and Research and Development spending are used.
 
-*Here: NorwegianKrone_forecast2021*
+![image](https://github.com/BigDataSeeker/Forex_Market_Stat_Analysis/blob/main/Main_findings_imgs/NorwegianKrone_forecast2021.PNG)
 
 
 ## Web references
