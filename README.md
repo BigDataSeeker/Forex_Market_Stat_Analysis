@@ -3,7 +3,6 @@
 
 **The goal** of this project is to investigate the foreign exchange market, in particular to find which are the factors that impact the most on the exchange rates, to discover hiddden patterns and similarities among different currency areas, to understand whether is possible to forecast future behaviour of the market and to study how big events (e.g wars, natural calamities or economic crisis) reflect on it.
 
-
 This repo contains the resutls and description of the Forex market analysis, as well as data and R code used during the project deveopment. 
 
 ## Introduction
